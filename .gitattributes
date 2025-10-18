@@ -1,2 +1,53 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+senario negativo
+it.skip('CT001 Registrar-se ja tendo conta', () => {
+cy.visit('https://www.kawasakibrasil.com/pt-br')
+cy.get('.myHide > .nav-link > div.d-none').click()
+cy.get('#regForm > :nth-child(5) > .pOne').type('gabriel.testes0105@gmail.com')
+cy.get('#RegistrationPassword').type('12345678')
+cy.get('#ConfirmRegistrationPassword').type('12345678')
+cy.get('#IsStayConnected').click()
+cy.get('#AgreeToTermsAndConditions').click()
+cy.get(':nth-child(11) > .blackBtn').click()
+cy.get('.validation-summary-errors > span').should('have.text', 'Desculpe, não é possível submeter. Existem campos inválidos no formulário abaixo.')
+  })
+
+senario positivo
+it.skip('CT002 login de usuario com sucesso', () => {
+cy.visit('https://www.kawasakibrasil.com/pt-br')
+cy.get('.myHide > .nav-link > div.d-none').click()
+cy.get('#Email').type('gabriel.testes0105@gmail.com')
+cy.get('#Password').type('12345678')
+cy.get('#loginForm > .blackBtn').click()
+  })
+
+Senario positivo
+it.skip('CT003 Adicionar veícolos aos favoritos', () => {
+cy.visit('https://www.kawasakibrasil.com/pt-br')
+cy.get('.myHide > .nav-link > div.d-none').click()
+cy.get('#Email').type('gabriel.testes0105@gmail.com')
+cy.get('#Password').type('12345678')
+cy.get('#loginForm > .blackBtn').click()
+cy.get(':nth-child(5) > .float-lg-right > .hppButton').click()
+  })
+
+Senario negativo
+it.skip('CT004 login de usuario Invalido', () => {
+cy.visit('https://www.kawasakibrasil.com/pt-br')
+cy.get('.myHide > .nav-link > div.d-none').click()
+cy.get('#Email').type('gabriel.testes@gmail.com')
+cy.get('#Password').type('12345678')
+cy.get('#loginForm > .blackBtn').click()
+cy.get('.validation-summary-errors > span').should('have.text', 'Desculpe, não é possível submeter. Existem campos inválidos no formulário abaixo.')
+  })
+
+  it.skip('CT005 ', () => {
+cy.visit('https://www.kawasakibrasil.com/pt-br')
+cy.get('.myHide > .nav-link > div.d-none').click()
+cy.get('#Email').type('gabriel.testes0105@gmail.com')
+cy.get('#Password').type('12345678')
+cy.get('#loginForm > .blackBtn').click()
+  })
+
+
+
+})
