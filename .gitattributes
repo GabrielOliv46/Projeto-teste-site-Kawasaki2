@@ -1,3 +1,5 @@
+describe('Teste funcionalidade de registro', () => {
+    
 senario negativo
 it.skip('CT001 Registrar-se ja tendo conta', () => {
 cy.visit('https://www.kawasakibrasil.com/pt-br')
