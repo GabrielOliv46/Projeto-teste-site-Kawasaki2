@@ -32,14 +32,5 @@ cy.get('#loginForm > .blackBtn').click()
 cy.get('.validation-summary-errors > span').should('have.text', 'Desculpe, não é possível submeter. Existem campos inválidos no formulário abaixo.')
   })
 
-  it.skip('CT004 ', () => {
-cy.visit('https://www.kawasakibrasil.com/pt-br')
-cy.get('.myHide > .nav-link > div.d-none').click()
-cy.get('#Email').type('gabriel.testes0105@gmail.com')
-cy.get('#Password').type('12345678')
-cy.get('#loginForm > .blackBtn').click()
-  })
-
-
 
 })
